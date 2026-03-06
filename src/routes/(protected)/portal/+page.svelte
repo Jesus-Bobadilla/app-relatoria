@@ -1,5 +1,8 @@
 <script lang="ts">
 	import { CalendarPlus, CalendarDays, Image, Users } from '@lucide/svelte';
+    import type { PageData } from './$types';
+
+    let { data } : { data: PageData} = $props();
 
 	const cards = [
 		{
@@ -30,7 +33,7 @@
 </script>
 
 <div class="p-8">
-	<h1 class="mb-6 text-2xl font-bold">Portal</h1>
+	<h1 class="mb-6 text-2xl font-bold">Portal {data.role}</h1>
 	<div class="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
 		{#each cards as card (card.href)}
 			<a
