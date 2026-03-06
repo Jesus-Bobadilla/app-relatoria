@@ -1,1 +1,0 @@
-<h1>manageBanners</h1>

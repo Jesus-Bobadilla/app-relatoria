@@ -9,10 +9,10 @@
 			href: '/createEvent'
 		},
 		{
-			title: 'Manage Banners',
-			description: 'Upload and organize promotional banners for events.',
+			title: 'Manage Countries',
+			description: 'Upload and organize promotional countries for events.',
 			icon: Image,
-			href: '/manageBanners'
+			href: '/manageCountries'
 		},
 		{
 			title: 'Manage Committees',

@@ -14,7 +14,7 @@
 	const navItems = [
 		{ label: 'Home', icon: House, href: '/portal' },
 		{ label: 'Create Event', icon: CalendarPlus, href: '/createEvent' },
-		{ label: 'Manage Banners', icon: Image, href: '/manageBanners' },
+		{ label: 'Manage Countries', icon: Image, href: '/manageCountries' },
 		{ label: 'Manage Committees', icon: Users, href: '/manageCommittees' },
 		{ label: 'Manage Events', icon: CalendarDays, href: '/manageEvents' }
 	];
