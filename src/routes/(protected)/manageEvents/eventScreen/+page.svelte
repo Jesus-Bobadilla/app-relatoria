@@ -1,3 +1,6 @@
+<!-- This page can be seen by users and admins -->
+
+
 <script lang="ts">
 	import { Handshake, Vote, MessagesSquare } from '@lucide/svelte';
 
