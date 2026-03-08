@@ -1,4 +1,6 @@
 <!-- This page can be seen by users and admins -->
+<!-- User should only be able to see this page if their id is in participant_committee.profiles_id -->
+<!-- Admins should see the participant_committee they selected -->
 
 
 <script lang="ts">
