@@ -11,6 +11,7 @@ declare global {
 			supabase: SupabaseClient;
 			user: User | null;
 			role: Role | null;
+			profileId: number | null;
 		}
 		// interface PageData {}
 		// interface PageState {}

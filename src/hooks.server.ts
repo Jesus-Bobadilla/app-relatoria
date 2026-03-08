@@ -3,6 +3,7 @@ import { supabaseServerClient } from '$lib/server';
 
 export const handle: Handle = async ({ event, resolve }) => {
 	event.locals.supabase = supabaseServerClient(event);
+	event.locals.profileId = null;
 
 	const {
 		data: { user },
@@ -12,6 +13,7 @@ export const handle: Handle = async ({ event, resolve }) => {
 	if (userError) {
 		event.locals.user = null;
 		event.locals.role = null;
+		event.locals.profileId = null;
 		return resolve(event);
 	}
 
@@ -19,21 +21,24 @@ export const handle: Handle = async ({ event, resolve }) => {
 
 	if (!user) {
 		event.locals.role = null;
+		event.locals.profileId = null;
 		return resolve(event);
 	}
 
 	const { data: profile, error: profileError } = await event.locals.supabase
 		.from('profiles')
-		.select('role')
+		.select('id, role')
 		.eq('auth_id', user.id)
 		.maybeSingle();
 
 	if (profileError) {
-        event.locals.role = null;
-        return resolve(event);
-    }
+		event.locals.role = null;
+		event.locals.profileId = null;
+		return resolve(event);
+	}
 
 	event.locals.role = profile?.role ?? null;
+	event.locals.profileId = profile?.id ?? null;
 
 	return resolve(event);
 };

@@ -4,7 +4,9 @@ export async function load({ locals }) {
 	if (!locals.user) {
 		throw redirect(303, '/');
 	}
+
 	return {
-        role: locals.role
-    };
+		role: locals.role,
+		profileId: locals.profileId
+	};
 }
