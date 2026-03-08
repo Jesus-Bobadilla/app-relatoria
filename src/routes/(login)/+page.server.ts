@@ -1,5 +1,13 @@
 import { fail, redirect } from '@sveltejs/kit';
 
+export async function load({ locals }) {
+	if (locals.user) {
+		throw redirect(303, '/portal');
+	}
+
+	return {};
+}
+
 export const actions = {
 	default: async ({ request, locals }) => {
 		const formData = await request.formData();
